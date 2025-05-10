@@ -44,7 +44,7 @@ You might find something like this
   <None Include="PrivacyManifests\Protobuf.xcprivacy" />
 </ItemGroup>
 
-Delete the 12 lines with the problem
+3. ✅ Delete the 12 lines with the problem
     <None Include="PrivacyManifests\FBLPromises.xcprivacy" />
     <None Include="PrivacyManifests\FirebaseCore.xcprivacy" />
     <None Include="PrivacyManifests\FirebaseCoreDiagnostics.xcprivacy" />
