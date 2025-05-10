@@ -8,6 +8,7 @@ Don’t worry — here’s how you can fix it.
 
 ⚠️ Note: This tutorial is focused on Xamarin.Forms iOS projects. If you're using .NET MAUI, the structure might differ slightly (e.g., Platforms/iOS folders), but the logic should be similar.
 
+```xml
 🧩 Step-by-Step Fix
 1. ✅ Download the .xcprivacy files
 You’ll need the .xcprivacy manifest files for the third-party SDKs that require them. Firebase SDKs are the most common and I just uploaded a folder with the archives so you don´t have to worry.
@@ -17,29 +18,31 @@ You’ll need the .xcprivacy manifest files for the third-party SDKs that requir
 2. ✅ Search for your application IOS.csproj archive, if you don´t see it like me, just navigate to your .IOS folder and it will be there, open it with any editor you like
 ![image](https://github.com/user-attachments/assets/e581b56a-c4a7-4a32-a8ee-a890a6c1103b)
 
-3. ✅ Inside the csproj you might find something like this
-  <ItemGroup>
-    <Compile Include="CustomButtonRenderer.cs" />
-    <Compile Include="CustomPageRenderer.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <None Include="Entitlements.plist" />
-    <BundleResource Include="GoogleService-Info.plist" />
-    <None Include="Info.plist" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="PrivacyManifests\FBLPromises.xcprivacy" />
-    <None Include="PrivacyManifests\FirebaseCore.xcprivacy" />
-    <None Include="PrivacyManifests\FirebaseCoreDiagnostics.xcprivacy" />
-    <None Include="PrivacyManifests\FirebaseInstallations.xcprivacy" />
-    <None Include="PrivacyManifests\FirebaseMessaging.xcprivacy" />
-    <None Include="PrivacyManifests\GoogleDataTransport.xcprivacy" />
-    <None Include="PrivacyManifests\GoogleToolboxForMac.xcprivacy" />
-    <None Include="PrivacyManifests\GoogleUtilities.xcprivacy" />
-    <None Include="PrivacyManifests\GTMSessionFetcher.xcprivacy" />
-    <None Include="PrivacyManifests\leveldb.xcprivacy" />
-    <None Include="PrivacyManifests\nanopb.xcprivacy" />
-    <None Include="PrivacyManifests\Protobuf.xcprivacy" />
-  </ItemGroup>
+You might find something like this
+
+<ItemGroup>
+  <Compile Include="CustomButtonRenderer.cs" />
+  <Compile Include="CustomPageRenderer.cs" />
+  <Compile Include="Main.cs" />
+  <Compile Include="AppDelegate.cs" />
+  <None Include="Entitlements.plist" />
+  <BundleResource Include="GoogleService-Info.plist" />
+  <None Include="Info.plist" />
+  <Compile Include="Properties\AssemblyInfo.cs" />
+  <None Include="PrivacyManifests\FBLPromises.xcprivacy" />
+  <None Include="PrivacyManifests\FirebaseCore.xcprivacy" />
+  <None Include="PrivacyManifests\FirebaseCoreDiagnostics.xcprivacy" />
+  <None Include="PrivacyManifests\FirebaseInstallations.xcprivacy" />
+  <None Include="PrivacyManifests\FirebaseMessaging.xcprivacy" />
+  <None Include="PrivacyManifests\GoogleDataTransport.xcprivacy" />
+  <None Include="PrivacyManifests\GoogleToolboxForMac.xcprivacy" />
+  <None Include="PrivacyManifests\GoogleUtilities.xcprivacy" />
+  <None Include="PrivacyManifests\GTMSessionFetcher.xcprivacy" />
+  <None Include="PrivacyManifests\leveldb.xcprivacy" />
+  <None Include="PrivacyManifests\nanopb.xcprivacy" />
+  <None Include="PrivacyManifests\Protobuf.xcprivacy" />
+</ItemGroup>
+
 Delete the 12 lines with the problem
     <None Include="PrivacyManifests\FBLPromises.xcprivacy" />
     <None Include="PrivacyManifests\FirebaseCore.xcprivacy" />
@@ -54,7 +57,7 @@ Delete the 12 lines with the problem
     <None Include="PrivacyManifests\nanopb.xcprivacy" />
     <None Include="PrivacyManifests\Protobuf.xcprivacy" />
     
-and paste the next BundleResources.
+and paste the next BundleResources instead.
 
 <BundleResource Include="PrivacyManifests\FBLPromises.xcprivacy">
   <LogicalName>Frameworks\FBLPromises.framework\PrivacyInfo.xcprivacy</LogicalName>
@@ -93,4 +96,4 @@ and paste the next BundleResources.
   <LogicalName>Frameworks\protobuf.framework\PrivacyInfo.xcprivacy</LogicalName>
 </BundleResource>
 
-4. ✅ Upload your app and the error has to be gone!
+# 4. ✅ Upload your app and the error has to be gone!
