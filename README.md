@@ -10,9 +10,8 @@ Don’t worry — here’s how you can fix it.
 
 🧩 Step-by-Step Fix
 1. ✅ Download the .xcprivacy files
-You’ll need the .xcprivacy manifest files for the third-party SDKs that require them. Firebase SDKs are the most common.
+You’ll need the .xcprivacy manifest files for the third-party SDKs that require them. Firebase SDKs are the most common and I just uploaded a folder with the archives so you don´t have to worry.
 
-I just uploaded a folder with the archives.
 ![image](https://github.com/user-attachments/assets/098126e2-eb92-4e59-8fa8-81a3ea56bf6b)
 
 2. ✅ Search for your application IOS.csproj archive, if you don´t see it like me, just navigate to your .IOS folder and it will be there, open it with any editor you like
