@@ -8,16 +8,17 @@ Don’t worry — here’s how you can fix it.
 
 ⚠️ Note: This tutorial is focused on Xamarin.Forms iOS projects. If you're using .NET MAUI, the structure might differ slightly (e.g., Platforms/iOS folders), but the logic should be similar.
 
-```xml
 🧩 Step-by-Step Fix
 1. ✅ Download the .xcprivacy files
 You’ll need the .xcprivacy manifest files for the third-party SDKs that require them. Firebase SDKs are the most common and I just uploaded a folder with the archives so you don´t have to worry.
 
 ![image](https://github.com/user-attachments/assets/098126e2-eb92-4e59-8fa8-81a3ea56bf6b)
 
-2. ✅ Search for your application IOS.csproj archive, if you don´t see it like me, just navigate to your .IOS folder and it will be there, open it with any editor you like
+2. ✅ Search for your application IOS.csproj archive, if you don´t see it like me, just navigate to your .IOS folder and it will be there, open it with any editor you like.
+
 ![image](https://github.com/user-attachments/assets/e581b56a-c4a7-4a32-a8ee-a890a6c1103b)
 
+```xml
 You might find something like this
 
 <ItemGroup>
